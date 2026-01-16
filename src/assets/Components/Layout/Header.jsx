@@ -1,4 +1,4 @@
-import { Menu, Search } from 'lucide-react'
+import { Bell, Filter, Menu, Plus, Search, Settings, Sun } from 'lucide-react'
 import React from 'react'
 
 function Header() {
@@ -16,14 +16,53 @@ function Header() {
                         <h1 className='text-2xl font-bold text-slate-800 dark:text-white'>
                             Dashboard
                         </h1>
-                        <p>Welcome back, Admin! here's what's happening today</p>
+                        <p className='text-sm text-slate-500 dark:text-slate-400'>Welcome back, Admin! here's what's happening today</p>
                     </div>
                 </div>
+
                 {/* Center */}
                 <div className="flex-1 max-w-md mx-8 ">
-                    <div className='relateive'>
-                        <Search className='w-4 h-4' />
+                    <div className='relative'>
+                        <Search className='w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2
+                        text-slate-400'/>
+                        <input type='text' placeholder='Search Anything' className='w-full pl-10 pr-4 py-2.5
+                        bg-slate-100 dark:bg-slate-800  border border-slate-200 dark:border-slate-700 rounded-xl 
+                        text-slate-800 dark:text-white placeholder-slate-500 focus:outline-none focus:ring-2
+                        focus:ring-blue-500 focus:border-transparent transition-all'/>
+                        <button type='button' className='absolute right-2 top-1/2 transform -translate-y-1/2 p-1.5 
+                        text-slate-400 hover:text-slate-600 dark:hover:bg-slate-800'>
+                            <Filter />
+                        </button>
                     </div>
+                </div>
+
+                {/* Right Section */}
+                <div className="flex items-center space-x-3">
+                    {/* Quic Action */}
+                    <button type='button' className="cursor-pointer hidden lg:flex items-center space-x-2 py-2 px-4 bg-gradient-to-br
+                    from-blue-600 to-purple-600 rounded-xl text-white hover:shadow-lg transition-all">
+                        <Plus className='w-4 h-4' />
+                        <span className='text-sm font-medium'>New</span>
+                    </button>
+                    {/* Toggle */}
+                    <button type='button' className='cursor-pointer p-2.5 rounded-xl text-slate-600 dark:text-slate-300
+                    hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'>
+                        <Sun className='w-5 h-5'/>
+                    </button>
+
+                    {/* Notification */}
+                    <button className='relative p-2.5 rounded-xl text-slate-600 dark:text-slate-300
+                    hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'>
+                        <Bell className='w-5 h-5'/>
+                        <span className='absolute -top-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full
+                        flex items-center justify-center'>3</span>
+                    </button>
+
+                    {/* Setting */}
+                    <button className='p-2.5 rounded-xl text-slate-600 dark:text-slate-300
+                    hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'>
+                        <Settings className='w-5 h-5'/>
+                    </button>
                 </div>
             </div>
         </div>
